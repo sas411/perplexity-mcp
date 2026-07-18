@@ -122,7 +122,7 @@ async def call_perplexity(query: str, recency: str) -> str:
             {"role": "system", "content": "Be precise and concise."},
             {"role": "user", "content": query},
         ],
-        "max_tokens": "512",
+        "max_tokens": 512,
         "temperature": 0.2,
         "top_p": 0.9,
         "return_images": False,
@@ -141,7 +141,8 @@ async def call_perplexity(query: str, recency: str) -> str:
         "Content-Type": "application/json",
     }
 
-    async with aiohttp.ClientSession() as session:
+    timeout = aiohttp.ClientTimeout(total=60)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
         async with session.post(url, json=payload, headers=headers) as response:
             response.raise_for_status()
             data = await response.json()
