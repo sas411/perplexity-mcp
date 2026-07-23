@@ -1,5 +1,7 @@
 # perplexity-mcp MCP server
 
+> Standalone personal MCP tool — not part of the SaSMaster platform.
+
 [![smithery badge](https://smithery.ai/badge/perplexity-mcp)](https://smithery.ai/server/perplexity-mcp)
 
 A Model Context Protocol (MCP) server that provides web search functionality using [Perplexity AI's](https://www.perplexity.ai/) API. Works with the [Anthropic](https://www.anthropic.com/news/model-context-protocol) Claude desktop client.
